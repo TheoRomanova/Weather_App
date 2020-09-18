@@ -14,7 +14,7 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var conditionsLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
     
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!

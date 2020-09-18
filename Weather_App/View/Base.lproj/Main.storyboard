@@ -226,11 +226,11 @@
                     <navigationItem key="navigationItem" title="Today" id="fdq-Q5-fln"/>
                     <connections>
                         <outlet property="cityLabel" destination="Htf-DO-wBo" id="7Vf-qt-LFB"/>
-                        <outlet property="conditionsLabel" destination="TTp-0P-sxK" id="OBF-dr-iUn"/>
                         <outlet property="humidityLabel" destination="OzL-TJ-8bp" id="GB1-fT-RqM"/>
                         <outlet property="precipitationLabel" destination="bs5-Nt-fWl" id="xlP-bW-02z"/>
                         <outlet property="pressureLabel" destination="l9Q-k9-x3W" id="xK6-Qi-YHx"/>
                         <outlet property="temperatureLabel" destination="1XL-9b-cTr" id="ske-rA-d4O"/>
+                        <outlet property="weatherDescriptionLabel" destination="TTp-0P-sxK" id="Lf7-v1-bJp"/>
                         <outlet property="weatherImage" destination="q3P-4U-8z1" id="98r-hO-aCB"/>
                         <outlet property="windDirectionLabel" destination="H7f-TD-oWK" id="Zkf-Ja-ScM"/>
                         <outlet property="windSpeedLabel" destination="NQn-OK-MPy" id="ZbG-pX-cl2"/>
@@ -323,9 +323,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.61304530199999996" green="0.73152977230000005" blue="0.91803306340000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="conditionsLabel" destination="W9Z-b9-NpG" id="zSg-4j-rdk"/>
                                             <outlet property="temparatureLabel" destination="3Mq-kQ-eL5" id="eBL-C4-r1f"/>
                                             <outlet property="timeLabel" destination="ztG-yM-NzR" id="OTA-dN-eDC"/>
+                                            <outlet property="weatherDescriptionLabel" destination="W9Z-b9-NpG" id="5oh-gm-h5x"/>
                                             <outlet property="weatherImage" destination="dno-e6-4yu" id="aZM-Rh-0Xa"/>
                                         </connections>
                                     </tableViewCell>
