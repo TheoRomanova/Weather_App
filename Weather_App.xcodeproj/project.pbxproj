@@ -14,6 +14,7 @@
 		683B89E72513D4F4002616CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683B89E62513D4F4002616CB /* Assets.xcassets */; };
 		683B89EA2513D4F4002616CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683B89E82513D4F4002616CB /* LaunchScreen.storyboard */; };
 		683B89F22513E167002616CB /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B89F12513E167002616CB /* ForecastViewController.swift */; };
+		683B89F725142AEA002616CB /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B89F625142AEA002616CB /* Cells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		683B89E92513D4F4002616CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		683B89EB2513D4F4002616CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		683B89F12513E167002616CB /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		683B89F625142AEA002616CB /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				683B89DD2513D4F2002616CB /* AppDelegate.swift */,
 				683B89DF2513D4F2002616CB /* SceneDelegate.swift */,
+				683B89F825142C78002616CB /* Cells */,
 				683B89F32513E179002616CB /* Controllers */,
 				683B89F42513E193002616CB /* View */,
 				683B89F52513E19F002616CB /* SupportingFiles */,
@@ -92,6 +95,14 @@
 				683B89E82513D4F4002616CB /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		683B89F825142C78002616CB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				683B89F625142AEA002616CB /* Cells.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				683B89F22513E167002616CB /* ForecastViewController.swift in Sources */,
 				683B89DE2513D4F2002616CB /* AppDelegate.swift in Sources */,
 				683B89E02513D4F2002616CB /* SceneDelegate.swift in Sources */,
+				683B89F725142AEA002616CB /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Theo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -342,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Theo.Weather-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
