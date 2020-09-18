@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import CoreLocation
 
 class TodayViewController: UIViewController {
 
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var conditionsLabel: UILabel!
+    
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var precipitationLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var windDirectionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

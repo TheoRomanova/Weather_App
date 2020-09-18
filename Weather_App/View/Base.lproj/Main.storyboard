@@ -26,7 +26,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-4U-8z1">
                                                         <rect key="frame" x="0.0" y="-0.5" width="120" height="120"/>
-                                                        <color key="tintColor" red="0.99995845559999996" green="0.79947930570000003" blue="0.78158456089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" red="0.57238537069999995" green="0.42717072147651008" blue="0.93520539999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="119.5" id="XUo-Ap-pzK"/>
                                                             <constraint firstAttribute="width" constant="120" id="kV9-7a-1DV"/>
@@ -93,7 +93,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="qUW-Up-3kH"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
-                                                        <color key="textColor" red="0.93333333330000001" green="0.97647058819999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="1" green="0.80000000000000004" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -224,6 +224,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="fdq-Q5-fln"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="Htf-DO-wBo" id="7Vf-qt-LFB"/>
+                        <outlet property="conditionsLabel" destination="TTp-0P-sxK" id="OBF-dr-iUn"/>
+                        <outlet property="humidityLabel" destination="OzL-TJ-8bp" id="GB1-fT-RqM"/>
+                        <outlet property="precipitationLabel" destination="bs5-Nt-fWl" id="xlP-bW-02z"/>
+                        <outlet property="pressureLabel" destination="l9Q-k9-x3W" id="xK6-Qi-YHx"/>
+                        <outlet property="temperatureLabel" destination="1XL-9b-cTr" id="ske-rA-d4O"/>
+                        <outlet property="weatherImage" destination="q3P-4U-8z1" id="98r-hO-aCB"/>
+                        <outlet property="windDirectionLabel" destination="H7f-TD-oWK" id="Zkf-Ja-ScM"/>
+                        <outlet property="windSpeedLabel" destination="NQn-OK-MPy" id="ZbG-pX-cl2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +263,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-yS-aKz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dno-e6-4yu">
                                                                     <rect key="frame" x="0.0" y="0.5" width="70" height="79"/>
@@ -263,7 +274,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="noU-3M-LjB">
-                                                                    <rect key="frame" x="90" y="0.0" width="122" height="80"/>
+                                                                    <rect key="frame" x="90" y="0.0" width="117" height="80"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="13:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztG-yM-NzR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="49" height="56"/>
@@ -282,29 +293,24 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="1Js-1F-5al">
-                                                            <rect key="frame" x="332" y="0.0" width="82" height="80"/>
+                                                            <rect key="frame" x="327" y="0.0" width="87" height="80"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mq-kQ-eL5">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25°" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mq-kQ-eL5">
                                                                     <rect key="frame" x="13.5" y="17" width="68.5" height="43"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                                                     <color key="textColor" red="0.93866509200000003" green="0.93880075220000003" blue="0.97616022830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.61304530199999996" green="0.73152977230000005" blue="0.91803306340000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstItem="3Mq-kQ-eL5" firstAttribute="leading" secondItem="1Js-1F-5al" secondAttribute="leading" constant="13.5" id="BNN-7Z-4ec"/>
-                                                                <constraint firstAttribute="bottom" secondItem="3Mq-kQ-eL5" secondAttribute="bottom" constant="20" id="pIg-rd-AJF"/>
-                                                                <constraint firstItem="3Mq-kQ-eL5" firstAttribute="top" secondItem="1Js-1F-5al" secondAttribute="top" constant="17" id="vgB-tn-hrg"/>
-                                                                <constraint firstAttribute="trailing" secondItem="3Mq-kQ-eL5" secondAttribute="trailing" id="xAz-7Z-wIm"/>
-                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="1Js-1F-5al" secondAttribute="bottom" id="Ilg-yL-UWc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="1Js-1F-5al" secondAttribute="trailing" id="WyT-Ev-qBo"/>
-                                                        <constraint firstItem="1Js-1F-5al" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bgd-yS-aKz" secondAttribute="trailing" constant="120" id="YFR-oV-ccH"/>
-                                                        <constraint firstItem="1Js-1F-5al" firstAttribute="top" secondItem="4gv-jb-Pas" secondAttribute="top" id="oNK-SW-dh8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1Js-1F-5al" secondAttribute="trailing" id="01I-0W-et4"/>
+                                                        <constraint firstItem="1Js-1F-5al" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="noU-3M-LjB" secondAttribute="trailing" constant="120" id="AOT-vx-bNR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1Js-1F-5al" secondAttribute="bottom" id="zC9-OE-ZfV"/>
+                                                        <constraint firstItem="1Js-1F-5al" firstAttribute="top" secondItem="4gv-jb-Pas" secondAttribute="top" id="zmh-gY-Adz"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -316,6 +322,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.61304530199999996" green="0.73152977230000005" blue="0.91803306340000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="conditionsLabel" destination="W9Z-b9-NpG" id="zSg-4j-rdk"/>
+                                            <outlet property="temparatureLabel" destination="3Mq-kQ-eL5" id="eBL-C4-r1f"/>
+                                            <outlet property="timeLabel" destination="ztG-yM-NzR" id="OTA-dN-eDC"/>
+                                            <outlet property="weatherImage" destination="dno-e6-4yu" id="aZM-Rh-0Xa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
