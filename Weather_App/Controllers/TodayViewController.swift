@@ -34,6 +34,15 @@ class TodayViewController: UIViewController {
         
         weatherManager.delegate = self
     }
+    
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "Share weather forecast",
+            message: "Do want to share today's weather data?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true)
+    }
 }
 
 //MARK: - WeatherManagerDelegate
@@ -52,12 +61,14 @@ extension TodayViewController: WeatherManagerDelegate {
             self.windDirectionLabel.text = weather.windDirection
         }
     }
+    
     func didFailWithError(error: Error) {
         print(error)
     }
 }
 
 //MARK: - CLLocationManagerDelegate
+
 extension TodayViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -73,10 +84,3 @@ extension TodayViewController: CLLocationManagerDelegate {
         print("Can't find current location")
     }
 }
-
-
-
-//let weather =  WeatherModel(
-//               cityName: city, description: description, conditionID: condition,
-//               tempKelv: temp, humidity: humidity, precipitation: precipitation,
-//               pressure: pressure, speed: speed, deg: direction, dt: time)
