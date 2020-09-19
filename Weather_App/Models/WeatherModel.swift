@@ -43,9 +43,9 @@ struct WeatherModel {
             }
         }
 
-    var temperatureCels: Int { //temp
-        let cels = tempKelv - 273.15
-        return Int(cels)
+    var temperatureCels: String { //temp
+        let cels = Int(tempKelv - 273.15)
+        return String(cels)
     }
 
     var windSpeed: Int { //windSpeed
@@ -55,8 +55,6 @@ struct WeatherModel {
     var windDirection: String { //windDirection
         let degrees = Double(deg)
         switch degrees {
-        case 348.75...11.25:
-            return "N"
         case 11.25...33.75:
             return "NNE"
         case 33.75...56.25:
@@ -85,10 +83,10 @@ struct WeatherModel {
             return "WNW"
         case 303.75...326.25:
             return "NW"
-        case 326.25 - 348.75:
+        case 326.25...348.75:
             return "NNW"
         default:
-            return "UNKNOWN"
+            return "N"
         }
     }
 

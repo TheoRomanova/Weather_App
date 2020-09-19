@@ -22,10 +22,6 @@ class ForecastViewController: UIViewController {
 
         tableView.rowHeight = 80
     }
-    
-
-
-
 }
 
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {

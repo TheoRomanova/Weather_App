@@ -57,8 +57,13 @@ struct WeatherManager {
             let direction = decodedData.list[0].wind.deg
             let time = decodedData.list[2].dt
             
-            let weather =  WeatherModel(cityName: city, description: description, conditionID: condition, tempKelv: temp, humidity: humidity, precipitation: precipitation, pressure: pressure, speed: speed, deg: direction, dt: time)
+            let weather =  WeatherModel(
+                cityName: city, description: description, conditionID: condition,
+                tempKelv: temp, humidity: humidity, precipitation: precipitation,
+                pressure: pressure, speed: speed, deg: direction, dt: time)
+            
             return weather
+            
         } catch {
             delegate?.didFailWithError(error: error)
         }
