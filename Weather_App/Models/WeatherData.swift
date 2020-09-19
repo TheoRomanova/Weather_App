@@ -16,8 +16,8 @@ struct WeatherData: Decodable {
 
 struct WeatherInfo: Decodable {
     let main: WeatherParametres
-    let weather: [WeatherDescription]
-    let pop: Int //precipitatio
+    let weather: [Weather]
+    let pop: Int //precipitation in %
     let wind: WindInfo
     let dt: Int
 }
@@ -27,8 +27,9 @@ struct WindInfo: Decodable {
     let deg: Int
 }
 
-struct WeatherDescription: Decodable {
+struct Weather: Decodable {
     let description: String
+    let id: Int
 }
 
 struct WeatherParametres: Decodable {
