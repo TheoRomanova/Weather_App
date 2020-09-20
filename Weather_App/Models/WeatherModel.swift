@@ -16,7 +16,7 @@ struct WeatherModel {
     let conditionID: Int  //image
     let tempKelv: Double //temp
     let humidity: Int
-    let precipitation: Int
+    let precipitation: Double
     let pressure: Int
     let speed: Double  //windSpeed
     let deg: Int  //windDirection
