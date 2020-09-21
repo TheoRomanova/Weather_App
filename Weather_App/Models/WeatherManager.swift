@@ -10,7 +10,8 @@ import Foundation
 import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: [WeatherModel])
+    
     func didFailWithError(error: Error)
 }
 
@@ -24,6 +25,7 @@ struct WeatherManager {
     }
     
     func performRequest(with urlString: String) {
+        print("2221")
         if let url = URL(string: urlString) {
             let session =  URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -33,6 +35,7 @@ struct WeatherManager {
                 }
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
+                        WeatherCacheManager.saveCache(data: weather)
                         self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
@@ -41,33 +44,36 @@ struct WeatherManager {
         }
     }
     
-    func parseJSON(_ weatherData: Data) -> WeatherModel? {
+    func parseJSON(_ weatherData: Data) -> [WeatherModel]? {
         let decoder = JSONDecoder() 
         do {
-            let decodedData = try decoder.decode(WeatherData.self, from: weatherData) //expect dataType
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
             let city = decodedData.city.name
-            let description = decodedData.list[0].weather[0].description
-            let condition = decodedData.list[3].weather[0].id //image
-            let temp = decodedData.list[0].main.temp
-            let humidity = decodedData.list[0].main.humidity
-            let precipitation = decodedData.list[0].pop
-            let pressure = decodedData.list[0].main.pressure
-            let speed = decodedData.list[0].wind.speed
-            let direction = decodedData.list[0].wind.deg
-            let time = decodedData.list[2].dt
+            var arrayOfData = [WeatherModel]()
             
-            let weather =  WeatherModel(
-                cityName: city, description: description, conditionID: condition,
-                tempKelv: temp, humidity: humidity, precipitation: precipitation,
-                pressure: pressure, speed: speed, deg: direction, dt: time)
+            for item in decodedData.list {
+                
+                let weather =  WeatherModel(
+                    cityName: city,
+                    description: item.weather[0].description,
+                    conditionID: item.weather[0].id,
+                    tempKelv: item.main.temp,
+                    humidity: item.main.humidity,
+                    precipitation: item.pop,
+                    pressure: item.main.pressure,
+                    speed: item.wind.speed,
+                    deg: item.wind.deg,
+                    dt: item.dt
+                )
+                arrayOfData.append(weather)
+            }
             
-            return weather
+            return arrayOfData
             
         } catch {
             delegate?.didFailWithError(error: error)
         }
         return nil
     }
-    
 }

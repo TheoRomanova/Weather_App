@@ -10,12 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-         Thread.sleep(forTimeInterval: 2.0)
+       
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {   
+        Thread.sleep(forTimeInterval: 1.0)
         
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.61, green: 0.35, blue: 0.71, alpha: 1.00)
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.613045302, green: 0.7315297723, blue: 0.9180330634, alpha: 1)
@@ -37,7 +34,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

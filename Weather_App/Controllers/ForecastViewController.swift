@@ -10,29 +10,36 @@ import UIKit
 import CoreLocation
 
 class ForecastViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
         tableView.rowHeight = 80
     }
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
+
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return WeatherCacheManager.getCache().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath)
+        let weatherData = WeatherCacheManager.getCache()
+        let weatherItem = weatherData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+        
+        cell.imageView?.image = UIImage(systemName: weatherItem.conditionImage)
+        cell.weatherDescriptionLabel.text = weatherItem.description
+        cell.temparatureLabel.text = weatherItem.temperatureCels + "°"
+        cell.timeLabel.text = weatherItem.getFormatedDateFromTimestamp
+        
         return cell
     }
-    
-    
 }

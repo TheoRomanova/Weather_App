@@ -13,16 +13,16 @@ struct WeatherModel {
     
     let cityName: String
     let description: String
-    let conditionID: Int  //image
-    let tempKelv: Double //temp
+    let conditionID: Int
+    let tempKelv: Double
     let humidity: Int
     let precipitation: Double
     let pressure: Int
-    let speed: Double  //windSpeed
-    let deg: Int  //windDirection
-    let dt: Int   //dataformatter
+    let speed: Double
+    let deg: Int
+    let dt: Double
     
-        var conditionImage: String {  //image
+        var conditionImage: String {
             switch conditionID {
             case 200...232:
                 return "cloud.bolt.rain"
@@ -43,16 +43,16 @@ struct WeatherModel {
             }
         }
 
-    var temperatureCels: String { //temp
+    var temperatureCels: String {
         let cels = Int(tempKelv - 273.15)
         return String(cels)
     }
 
-    var windSpeed: Int { //windSpeed
+    var windSpeed: Int {
         return Int(speed)
     }
 
-    var windDirection: String { //windDirection
+    var windDirection: String {
         let degrees = Double(deg)
         switch degrees {
         case 11.25...33.75:
@@ -90,9 +90,15 @@ struct WeatherModel {
         }
     }
 
-    var data: String {  // I'll use dataformatter
-        return String(dt)
+    var getFormatedDateFromTimestamp: String {
+        let date = Date(timeIntervalSince1970: dt)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeZone = .current
+        dateFormatter.timeZone = NSTimeZone() as TimeZone
+        dateFormatter.dateFormat = "HH:mm"
+        
+        return dateFormatter.string(from: date)
     }
 }
-
-

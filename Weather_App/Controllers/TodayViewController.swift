@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class TodayViewController: UIViewController {
-
+    
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -48,17 +48,17 @@ class TodayViewController: UIViewController {
 //MARK: - WeatherManagerDelegate
 
 extension TodayViewController: WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: [WeatherModel]) {
         DispatchQueue.main.async {
-            self.weatherImage.image = UIImage(systemName: weather.conditionImage)
-            self.cityLabel.text = weather.cityName
-            self.temperatureLabel.text = weather.temperatureCels + "°С"
-            self.weatherDescriptionLabel.text = weather.description
-            self.humidityLabel.text = String(weather.humidity) + "%"
-            self.precipitationLabel.text = String(weather.precipitation) + "%"
-            self.pressureLabel.text = String(weather.pressure) + " hPa"
-            self.windSpeedLabel.text = String(weather.windSpeed) + " km/h"
-            self.windDirectionLabel.text = weather.windDirection
+            self.weatherImage.image = UIImage(systemName: weather[0].conditionImage)
+            self.cityLabel.text = weather[0].cityName
+            self.temperatureLabel.text = weather[0].temperatureCels + "°С"
+            self.weatherDescriptionLabel.text = weather[0].description
+            self.humidityLabel.text = String(weather[0].humidity) + "%"
+            self.precipitationLabel.text = String(weather[0].precipitation) + "%"
+            self.pressureLabel.text = String(weather[0].pressure) + " hPa"
+            self.windSpeedLabel.text = String(weather[0].windSpeed) + " km/h"
+            self.windDirectionLabel.text = weather[0].windDirection
         }
     }
     

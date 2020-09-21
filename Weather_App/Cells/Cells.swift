@@ -16,5 +16,8 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temparatureLabel: UILabel!
-    
+}
+
+class DayOfTheWeekCell: UITableViewCell {   
+    @IBOutlet weak var dayLabel: UILabel!
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Feodora Andryieuskaya. All rights reserved.
 //
 
-
 import Foundation
 
 struct WeatherData: Decodable {
@@ -17,9 +16,9 @@ struct WeatherData: Decodable {
 struct WeatherInfo: Decodable {
     let main: WeatherParametres
     let weather: [Weather]
-    let pop: Double //precipitation in %
+    let pop: Double
     let wind: WindInfo
-    let dt: Int
+    let dt: Double
 }
 
 struct WindInfo: Decodable {
@@ -41,17 +40,3 @@ struct WeatherParametres: Decodable {
 struct CityInfo: Decodable {
     let name: String
 }
-
-
-
-
-
-
-
-
-//>>>> address -> resp
-//let body = resp.body
-//body.city.name
-
-
-
