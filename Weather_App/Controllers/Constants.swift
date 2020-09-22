@@ -7,9 +7,8 @@
 //
 
 import Foundation
- 
-struct Constantst {
-    
+
+struct Constantsts {
     static var timeFormat: String = "HH:mm"
     static var zeroTime: String = "00:00"
     static var dayOfTheWeek: String = "EEEE"

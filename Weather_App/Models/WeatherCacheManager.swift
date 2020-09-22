@@ -9,13 +9,12 @@
 import Foundation
 
 struct WeatherCacheManager {
-    
     static var weatherCache : [WeatherModel] = []
     
     static func saveCache (data:[WeatherModel]) {
         evictCache()
         for (index, element) in data.enumerated() {
-            if (index == 0 || element.getFormatedDateFromTimestamp(format: Constantst.timeFormat) == Constantst.zeroTime) {
+            if (index == 0 || element.getFormatedDateFromTimestamp(format: Constantsts.timeFormat) == Constantsts.zeroTime) {
                 weatherCache.append(element)
             }
             weatherCache.append(element)

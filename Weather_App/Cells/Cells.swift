@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-
 class WeatherCell: UITableViewCell {
-    
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!

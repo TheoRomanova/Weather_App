@@ -10,12 +10,10 @@ import UIKit
 import CoreLocation
 
 class TodayViewController: UIViewController {
-    
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
-    
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
@@ -43,7 +41,6 @@ class TodayViewController: UIViewController {
         self.present(alert, animated: true)
     }
 }
-
 //MARK: - WeatherManagerDelegate
 
 extension TodayViewController: WeatherManagerDelegate {
@@ -65,7 +62,6 @@ extension TodayViewController: WeatherManagerDelegate {
         print(error)
     }
 }
-
 //MARK: - CLLocationManagerDelegate
 
 extension TodayViewController: CLLocationManagerDelegate {
@@ -83,3 +79,4 @@ extension TodayViewController: CLLocationManagerDelegate {
         print("Can't find current location")
     }
 }
+

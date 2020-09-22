@@ -9,8 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct WeatherModel:Equatable {
-    
+struct WeatherModel: Equatable {
     let cityName: String
     let description: String
     let conditionID: Int
@@ -41,17 +40,17 @@ struct WeatherModel:Equatable {
             default:
                 return "cloud"
             }
-        }
-
+    }
+    
     var temperatureCels: String {
         let cels = Int(tempKelv - 273.15)
         return String(cels)
     }
-
+    
     var windSpeed: Int {
         return Int(speed)
     }
-
+    
     var windDirection: String {
         let degrees = Double(deg)
         switch degrees {
@@ -101,6 +100,4 @@ struct WeatherModel:Equatable {
         
         return dateFormatter.string(from: date)
     }
-
- 
 }
