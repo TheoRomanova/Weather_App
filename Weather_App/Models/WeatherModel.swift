@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct WeatherModel {
+struct WeatherModel:Equatable {
     
     let cityName: String
     let description: String

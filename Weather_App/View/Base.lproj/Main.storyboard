@@ -266,34 +266,34 @@
                                 <rect key="frame" x="0.0" y="98" width="414" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayOfTheWeekCell" rowHeight="43" id="D6r-kz-0NR" customClass="DayOfTheWeekCell" customModule="Weather_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayOfTheWeekCell" rowHeight="60" id="D6r-kz-0NR" customClass="DayOfTheWeekCell" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D6r-kz-0NR" id="eDo-Ju-clC" customClass="WeatherCell" customModule="Weather_App" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-AE-fBS">
-                                                    <rect key="frame" x="10" y="10" width="55" height="23"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                    <color key="textColor" red="0.93866509200000003" green="0.93880075220000003" blue="0.97616022830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-AE-fBS">
+                                                    <rect key="frame" x="30" y="11" width="69" height="38"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.54901960780000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="GkO-AE-fBS" secondAttribute="bottom" constant="10" id="9Gi-97-yZN"/>
-                                                <constraint firstItem="GkO-AE-fBS" firstAttribute="top" secondItem="eDo-Ju-clC" secondAttribute="top" constant="10" id="dPI-L0-JTj"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GkO-AE-fBS" secondAttribute="trailing" constant="20" symbolic="YES" id="dzc-Eq-wnj"/>
-                                                <constraint firstItem="GkO-AE-fBS" firstAttribute="leading" secondItem="eDo-Ju-clC" secondAttribute="leading" constant="10" id="vbf-RK-y1N"/>
+                                                <constraint firstItem="GkO-AE-fBS" firstAttribute="top" secondItem="eDo-Ju-clC" secondAttribute="topMargin" id="2xI-iA-W2a"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GkO-AE-fBS" secondAttribute="trailing" constant="315" id="dNG-5N-BVI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GkO-AE-fBS" secondAttribute="bottom" id="t2S-iB-OAn"/>
+                                                <constraint firstItem="GkO-AE-fBS" firstAttribute="leading" secondItem="eDo-Ju-clC" secondAttribute="leadingMargin" constant="10" id="vQl-FQ-d97"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.61304530199999996" green="0.73152977230000005" blue="0.91803306340000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.93866509200000003" green="0.93880075220000003" blue="0.97616022830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dayLabel" destination="GkO-AE-fBS" id="Nok-TL-9M8"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="80" id="RrW-Mi-IH0" customClass="WeatherCell" customModule="Weather_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="88" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RrW-Mi-IH0" id="Y5A-Ko-8Fb" customClass="WeatherCell" customModule="Weather_App" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>

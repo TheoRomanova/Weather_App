@@ -15,12 +15,8 @@ class ForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                print(WeatherCacheManager.daysOfTheWeekCache)
-                print(WeatherCacheManager.daysOfTheWeekCache)
-                print(WeatherCacheManager.daysOfTheWeekCache)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.rowHeight = 80
     }
 }
 
@@ -33,16 +29,35 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let weatherData = WeatherCacheManager.getCache()
         let weatherItem = weatherData[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+        let previousItem = indexPath.row > 0 ? weatherData[indexPath.row - 1] : nil
+        let weatherDate = weatherItem.getFormatedDateFromTimestamp(format: Constantst.timeFormat)
         
-        cell.weatherImage.image = UIImage(systemName: weatherItem.conditionImage)
-        cell.weatherDescriptionLabel.text = weatherItem.description
-        cell.temparatureLabel.text = weatherItem.temperatureCels + "°"
-        cell.timeLabel.text = weatherItem.getFormatedDateFromTimestamp(format: "HH:mm")
+        let dayOfTheWeekCell = tableView.dequeueReusableCell(withIdentifier: Constantst.dayOfTheWeekCell, for: indexPath) as! DayOfTheWeekCell
+        let weatherCell = tableView.dequeueReusableCell(withIdentifier: Constantst.weatherCell, for: indexPath) as! WeatherCell
         
-        return cell
+        if indexPath.row == 0 {
+            tableView.rowHeight = 40
+            dayOfTheWeekCell.dayLabel.text = "Today"
+            
+            return dayOfTheWeekCell
+            
+        } else if weatherDate == Constantst.zeroTime && weatherItem != previousItem {
+            tableView.rowHeight = 40
+            dayOfTheWeekCell.dayLabel.text = weatherItem.getFormatedDateFromTimestamp(format: Constantst.dayOfTheWeek)
+            return dayOfTheWeekCell
+       
+        } else  {
+      
+            tableView.rowHeight = 80
+            weatherCell.weatherImage.image = UIImage(systemName: weatherItem.conditionImage)
+            weatherCell.weatherDescriptionLabel.text = weatherItem.description
+            weatherCell.temparatureLabel.text = weatherItem.temperatureCels + "°"
+            weatherCell.timeLabel.text = weatherDate
+            
+            return weatherCell
+        }        
     }
 }
-
