@@ -15,7 +15,9 @@ class ForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                print(WeatherCacheManager.daysOfTheWeekCache)
+                print(WeatherCacheManager.daysOfTheWeekCache)
+                print(WeatherCacheManager.daysOfTheWeekCache)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.rowHeight = 80
@@ -38,8 +40,9 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
         cell.weatherImage.image = UIImage(systemName: weatherItem.conditionImage)
         cell.weatherDescriptionLabel.text = weatherItem.description
         cell.temparatureLabel.text = weatherItem.temperatureCels + "°"
-        cell.timeLabel.text = weatherItem.getFormatedDateFromTimestamp
+        cell.timeLabel.text = weatherItem.getFormatedDateFromTimestamp(format: "HH:mm")
         
         return cell
     }
 }
+

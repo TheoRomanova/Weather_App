@@ -90,15 +90,17 @@ struct WeatherModel {
         }
     }
 
-    var getFormatedDateFromTimestamp: String {
+    func getFormatedDateFromTimestamp(format: String) -> String {
         let date = Date(timeIntervalSince1970: dt)
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.medium
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeZone = .current
         dateFormatter.timeZone = NSTimeZone() as TimeZone
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: date)
     }
+
+ 
 }
