@@ -35,7 +35,7 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
         let weatherItem = weatherData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         
-        cell.imageView?.image = UIImage(systemName: weatherItem.conditionImage)
+        cell.weatherImage.image = UIImage(systemName: weatherItem.conditionImage)
         cell.weatherDescriptionLabel.text = weatherItem.description
         cell.temparatureLabel.text = weatherItem.temperatureCels + "°"
         cell.timeLabel.text = weatherItem.getFormatedDateFromTimestamp
